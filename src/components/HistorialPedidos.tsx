@@ -8,6 +8,7 @@ type Pedido = {
   estado: string;
   total: string;
 };
+
 const HistorialPedidos: React.FC = () => {
   const pedidos: Pedido[] = [
     {
@@ -33,10 +34,19 @@ const HistorialPedidos: React.FC = () => {
         <ul>
           {pedidos.map((pedido) => (
             <li key={pedido.id}>
-              <p>Fecha de compra: {pedido.fecha}</p>
-              <p>Productos: {pedido.productos.join(", ")}</p>
-              <p>Total: {pedido.total}</p>
-              <p>Estado: {pedido.estado}</p>
+              <p>
+                <span>Fecha de compra:</span> {pedido.fecha}
+              </p>
+              <p>
+                <span>Productos:</span> {pedido.productos.join(", ")}
+              </p>
+              <p>
+                <span>Total: </span>
+                {pedido.total}
+              </p>
+              <p>
+                <span>Estado: </span> {pedido.estado}
+              </p>
             </li>
           ))}
         </ul>

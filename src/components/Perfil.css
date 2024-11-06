@@ -1,5 +1,8 @@
+/* Estilos para el sidebar */
+
 .perfil-container {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .sidebar {
@@ -12,6 +15,7 @@
     background-color: #f1f1f1;
     padding: 20px;
     box-sizing: border-box;
+
 }
 
 .content {
@@ -33,7 +37,7 @@
     display: block;
     margin-bottom: 30px;
     text-decoration: none;
-    color: #333;
+    color: #555555;
     font-weight: bold;
     transition: color 0.3s ease;
 }
@@ -42,12 +46,45 @@
     color: #0077cc;
 }
 
+
+
 .user-profile,
 .order-history {
-    font-size: 20px;
+    font-size: 19px;
+    margin-left: 9px;
 }
 
 .fa-solid,
 .fa-shopping-cart {
     margin-right: 10px;
+
+}
+
+.user-icon-sidebar,
+.cart-icon-sidebar {
+    color: #D88504;
+}
+
+/* Ajustes para pantallas pequeñas...pendiente */
+@media (max-width: 600px) {
+
+
+    .datos-perfil-container {
+        padding: 10px;
+    }
+
+    .datos-perfil-title {
+        font-size: 20px;
+    }
+
+    .datos-perfil p {
+        font-size: 14px;
+    }
+
+    .user-icon,
+    .email-icon,
+    .phone-icon,
+    .map-icon {
+        font-size: 18px;
+    }
 }

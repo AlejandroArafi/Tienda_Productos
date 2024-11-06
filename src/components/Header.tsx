@@ -1,5 +1,9 @@
 import { CartItem, GuitarID } from "../types/types";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUser } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
+
 type HeaderProps = {
   cart: CartItem[];
   removeFromCart: (id: GuitarID) => void;
@@ -32,10 +36,25 @@ export default function Header({
               />
             </a>
           </div>
-          <nav className="col-md-6 a mt-5 d-flex align-items-start justify-content-end">
-            <div className="carrito">
+
+          <nav className="col-md-6 a mt-5 d-flex align-items-start justify-content-end ms-3">
+            <div className="carrito d-flex align-items-center ">
+              {/* se agrega el Icono de usuario para testeaer los componentes de perfil y pedidos */}
+              <Link to="/user">
+                <FontAwesomeIcon
+                  icon={faUser}
+                  className="text-white me-2"
+                  style={{
+                    fontSize: "1.5rem",
+                    marginRight: "1rem",
+                    zIndex: 102,
+                  }}
+                />
+              </Link>
+              {/* fin de icono */}
+
               <img
-                className="img-fluid"
+                className="img-fluid ms-3"
                 src="/img/carrito.png"
                 alt="imagen carrito"
               />

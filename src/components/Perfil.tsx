@@ -11,22 +11,29 @@ const Perfil: React.FC = () => {
   const [activeComponent, setActiveComponent] =
     useState<ActiveComponent>("DatosPerfil");
 
+  const handleProfileClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setActiveComponent("DatosPerfil");
+  };
+
+  const handleHistoryClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setActiveComponent("HistorialPedidos");
+  };
+
   return (
     <div className="perfil-container">
       <section className="sidebar">
-        <a href="#" onClick={() => setActiveComponent("DatosPerfil")}>
-          <FontAwesomeIcon icon={faUser} />
-
+        <a href="#" onClick={handleProfileClick}>
+          <FontAwesomeIcon icon={faUser} className="user-icon-sidebar" />
           <span className="user-profile">Perfil de Usuario</span>
         </a>
 
-        <a
-          href="#"
-          onClick={() => {
-            setActiveComponent("HistorialPedidos");
-          }}
-        >
-          <FontAwesomeIcon icon={faShoppingCart} />
+        <a href="#" onClick={handleHistoryClick}>
+          <FontAwesomeIcon
+            icon={faShoppingCart}
+            className="cart-icon-sidebar"
+          />
           <span className="order-history">Historial de Pedidos</span>
         </a>
       </section>
